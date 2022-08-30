@@ -15,6 +15,7 @@ class Ninja {
     }
 
     drinkSake(){
+        console.log("I am drinking Sake... yum!");
         this.health += 10;
     }
 }
@@ -30,3 +31,22 @@ ninja2.sayName();
 ninja2.showStats();
 ninja2.drinkSake();
 ninja2.showStats();
+
+console.log("******Inheritance Below*******")
+
+class Sensei extends Ninja {
+    constructor(name, wisdom=10){
+        super(name, 200, 10, 10);
+        this.wisdom = wisdom;
+    }
+
+    speakWisdom(){
+        this.drinkSake();
+        console.log("Imagine I am telling you a wise message...");
+    }
+}
+
+const sensei1 = new Sensei("Elijah", 20);
+sensei1.sayName();
+sensei1.speakWisdom();
+sensei1.showStats();
