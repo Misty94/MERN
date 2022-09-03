@@ -8,15 +8,9 @@ const HookForm = () => {
     const [password, setPassword] = useState("");
     const [confirm, setConfirm] = useState("");
 
-    const createUser = (e) => {
-        e.preventDefault();
-        const newUser = {firstName, lastName, email, password, confirm};
-        console.log("Welcome ", newUser);
-    };
-
     return (
         <div className="w-50 m-5">
-            <form onSubmit={createUser}>
+            <form >
                 <div className="mb-3">
                     <label className="me-5">First Name: </label>
                     <input type="text" onChange={ (e) => setFirstName(e.target.value)} value={ firstName }/>
@@ -40,9 +34,8 @@ const HookForm = () => {
                 <div className="mb-3">
                     <label className="me-2">Confirm Password: </label>
                     <input type="password" onChange={ (e) => setConfirm(e.target.value)} value={ confirm }/>
-                    { confirm != password && confirm.length > 0 ? <p className="text-danger">Your passwords must match!</p> : '' }
+                    { confirm !== password && confirm.length > 0 ? <p className="text-danger">Your passwords must match!</p> : '' }
                 </div>
-                {/* <input type="submit" className="my-2" value="Create User" /> */}
             </form>
             <h5 className="my-2">Your Form Data:</h5>
             <Display firstName = {firstName} lastName = {lastName} email = {email} password = {password} confirm = {confirm}/>
