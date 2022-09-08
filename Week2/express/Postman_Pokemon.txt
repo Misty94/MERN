@@ -1,0 +1,12 @@
+Here are five different GET requests that retrieve 5 different pokemon, that I tested using Postman.
+
+
+https://pokeapi.co/api/v2/pokemon/eevee 
+
+https://pokeapi.co/api/v2/pokemon/25 
+
+https://pokeapi.co/api/v2/pokemon/gyarados
+
+https://pokeapi.co/api/v2/pokemon/77
+
+https://pokeapi.co/api/v2/pokemon/vulpix
