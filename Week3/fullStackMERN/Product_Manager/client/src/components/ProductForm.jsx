@@ -9,8 +9,8 @@ const ProductForm = () => {
     const submitHandler = (e) => {
         e.preventDefault();
         axios.post("http://localhost:8000/api/product/new", {title, price, description})
-            .then(res => console.log("This is the response: ", res))
-            .catch(err => console.log("There is an error: ", err))
+            .then(res => console.log("Response when creating a new product: ", res))
+            .catch(err => console.log("Error creating new product: ", err))
     }
 
     return (
@@ -19,15 +19,15 @@ const ProductForm = () => {
             <form onSubmit={ submitHandler }>
                 <p>
                     <label className='me-3'>Title</label>
-                    <input type="text" onChange={ (e) => setTitle(e.target.value) } value={ title }/>
+                    <input type="text" name="title" onChange={ (e) => setTitle(e.target.value) } value={ title }/>
                 </p>
                 <p>
                     <label className='me-3'>Price</label>
-                    <input type="number" onChange={ (e) => setPrice(e.target.value) } value={ price }/>
+                    <input type="number" name='price' onChange={ (e) => setPrice(e.target.value) } value={ price }/>
                 </p>
                 <p>
                     <label className='me-3'>Description</label>
-                    <input type="text" onChange={ (e) => setDescription(e.target.value) } value={ description }/>
+                    <input type="text" name='description' onChange={ (e) => setDescription(e.target.value) } value={ description }/>
                 </p>
                 <input type="submit" value="Create" />
             </form>
