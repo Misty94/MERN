@@ -29,7 +29,7 @@ const ProductForm = () => {
                     <label className='me-3'>Description</label>
                     <input type="text" name='description' onChange={ (e) => setDescription(e.target.value) } value={ description }/>
                 </p>
-                <input type="submit" value="Create" />
+                <input type="submit" value="Create" className='btn btn-primary'/>
             </form>
         </>
     )

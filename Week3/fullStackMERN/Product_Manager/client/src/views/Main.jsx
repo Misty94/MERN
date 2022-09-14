@@ -16,12 +16,16 @@ const Main = () => {
             .catch(err => console.log("There is an error: ", err));
     }, []);
 
+    const removeFromDOM = productId => {
+        setProductList(productList.filter(product => product._id !== productId));
+    }
+
     return (
         <>
             <div>
                 <ProductForm />
                 <hr />
-                {<DisplayProducts productList={productList} />}
+                {<DisplayProducts productList={productList} removeFromDOM={removeFromDOM} />}
             </div>
     </>
     )
